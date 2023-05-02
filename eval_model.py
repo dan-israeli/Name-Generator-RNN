@@ -1,6 +1,6 @@
 # imports
-from train_q2 import LETTERS_NUM, LANGUAGES, END_TOKEN
-from train_q2 import RNN, name_to_tensor
+from train_model import LETTERS_NUM, LANGUAGES, END_TOKEN
+from train_model import RNN, name_to_tensor
 import torch
 import string
 
@@ -38,7 +38,7 @@ def generate_name(model, letter, language):
 
 def evaluate_model_q2(letter, language):
     rnn = RNN(input_size=LETTERS_NUM, hidden_size=500, output_size=LETTERS_NUM)
-    rnn.load_state_dict(torch.load("trained_model_q2.pkl"))
+    rnn.load_state_dict(torch.load("trained_model.pkl"))
 
     generated_name = generate_name(rnn, letter, language)
 
