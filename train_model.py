@@ -184,7 +184,7 @@ def train_model_q2():
     plot_graph(train_loss_lst, epochs=[i for i in range(epochs)])
 
     # saving the trained model
-    torch.save(rnn.state_dict(), "trained_model_q2.pkl")
+    torch.save(rnn.state_dict(), "trained_model.pkl")
 
 
 def main():
